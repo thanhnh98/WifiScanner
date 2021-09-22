@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.thanh_nguyen.youtube">
+    <uses-sdk android:minSdkVersion="8" android:targetSdkVersion="16"/>
+
+    <uses-permission android:name="android.permission.INTERNET"/>
+
+    <application>
+
+        <activity
+            android:name="com.thanh_nguyen.youtubeapidemo.YouTubeAPIDemoActivity">
+            <intent-filter >
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            <meta-data android:name="@string/isLaunchableActivity" android:value="false"/>
+        </activity>
+
+        <activity
+            android:label="@string/videowall_demo_name"
+            android:name="com.thanh_nguyen.youtubeapidemo.VideoWallDemoActivity"
+            android:screenOrientation="landscape"
+            android:theme="@style/BlackNoBarsTheme"
+            android:configChanges="orientation|screenSize|keyboardHidden">
+            <meta-data android:name="@string/minVersion" android:value="11"/>
+            <meta-data android:name="@string/isLaunchableActivity" android:value="true"/>
+        </activity>
+
+        <activity
+            android:label="@string/videolist_demo_name"
+            android:name="com.thanh_nguyen.youtubeapidemo.VideoListDemoActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize">
+            <meta-data android:name="@string/minVersion" android:value="13"/>
+            <meta-data android:name="@string/isLaunchableActivity" android:value="true"/>
+        </activity>
+
+        <activity
+            android:label="@string/playerview_demo_name"
+            android:name="com.thanh_nguyen.youtubeapidemo.PlayerViewDemoActivity"
+            android:screenOrientation="nosensor"
+            android:configChanges="orientation|screenSize|keyboardHidden">
+            <meta-data android:name="@string/minVersion" android:value="8"/>
+            <meta-data android:name="@string/isLaunchableActivity" android:value="true"/>
+        </activity>
+
+        <activity
+            android:label="@string/fragment_demo_name"
+            android:name="com.thanh_nguyen.youtubeapidemo.FragmentDemoActivity"
+            android:screenOrientation="nosensor"
+            android:configChanges="orientation|screenSize|keyboardHidden">
+            <meta-data android:name="@string/minVersion" android:value="11"/>
+            <meta-data android:name="@string/isLaunchableActivity" android:value="true"/>
+        </activity>
+
+        <activity
+            android:label="@string/player_controls_demo_name"
+            android:name="com.thanh_nguyen.youtubeapidemo.PlayerControlsDemoActivity"
+            android:windowSoftInputMode="stateHidden">
+            <meta-data android:name="@string/minVersion" android:value="8"/>
+            <meta-data android:name="@string/isLaunchableActivity" android:value="true"/>
+        </activity>
+
+        <activity
+            android:label="@string/fullscreen_demo_name"
+            android:name="com.thanh_nguyen.youtubeapidemo.FullscreenDemoActivity"
+            android:screenOrientation="sensor"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:theme="@style/BlackNoTitleBarTheme">
+            <meta-data android:name="@string/minVersion" android:value="8"/>
+            <meta-data android:name="@string/isLaunchableActivity" android:value="true"/>
+        </activity>
+
+        <activity
+            android:label="@string/action_bar_demo_name"
+            android:name="com.thanh_nguyen.youtubeapidemo.ActionBarDemoActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:theme="@style/OverlayActionBarTheme"
+            android:screenOrientation="sensorLandscape">
+            <meta-data android:name="@string/minVersion" android:value="11"/>
+            <meta-data android:name="@string/isLaunchableActivity" android:value="true"/>
+        </activity>
+
+        <activity
+            android:label="@string/standalone_player_demo_name"
+            android:name="com.thanh_nguyen.youtubeapidemo.StandalonePlayerDemoActivity">
+            <meta-data android:name="@string/minVersion" android:value="8"/>
+            <meta-data android:name="@string/isLaunchableActivity" android:value="true"/>
+        </activity>
+
+        <activity
+            android:label="@string/intents_demo_name"
+            android:name="com.thanh_nguyen.youtubeapidemo.IntentsDemoActivity">
+            <meta-data android:name="@string/minVersion" android:value="8"/>
+            <meta-data android:name="@string/isLaunchableActivity" android:value="true"/>
+        </activity>
+
+    </application>
+
+</manifest>

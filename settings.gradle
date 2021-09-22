@@ -1,0 +1,9 @@
+rootProject.name = "BaseProject"
+include ':app'
+include ':facebook'
+include ':google'
+include ':firebase'
+include ':youtube'
+include ':image_compressor'
+include ':utils'
+include ':permission_manager'

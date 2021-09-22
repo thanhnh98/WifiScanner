@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Wifi Scanner</string>
+    <string name="facebook_app_id">490997225456774</string>
+    <string name="fb_login_protocol_scheme">fb490997225456774</string>
+
+    <string name="signup"><u>Sign up</u></string>
+    <string name="forgot_password"><u>Fogot password?</u></string>
+</resources>

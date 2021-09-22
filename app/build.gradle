@@ -1,0 +1,114 @@
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+    id 'kotlin-kapt'
+    id 'com.google.gms.google-services'
+}
+
+android {
+    compileSdkVersion AndroidConfigs.compileSdkVersion
+    buildToolsVersion AndroidConfigs.buildToolsVersion
+
+    defaultConfig {
+        applicationId AndroidConfigs.applicationId
+        minSdkVersion AndroidConfigs.minSdkVersion
+        targetSdkVersion AndroidConfigs.targetSdkVersion
+        versionCode AndroidConfigs.versionCode
+        versionName AndroidConfigs.versionName
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    signingConfigs {
+        release {
+//            keyAlias keystoreProperties['keyAlias']
+//            keyPassword keystoreProperties['keyPassword']
+//            storeFile keystoreProperties['storeFile'] ? file(keystoreProperties['storeFile']) : null
+//            storePassword keystoreProperties['storePassword']
+        }
+    }
+
+    buildTypes {
+        debug {
+            debuggable true
+            minifyEnabled false
+            buildConfigField "String", "BASE_URL", "\"https://gist.githubusercontent.com/\""
+            applicationIdSuffix ".debug"
+            signingConfig signingConfigs.debug
+        }
+        release {
+            debuggable false
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            buildConfigField "String", "BASE_URL", "\"https://gist.githubusercontent.com/\""
+            signingConfig signingConfigs.release
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    buildFeatures {
+
+        dataBinding true
+
+        // for view binding:
+        // viewBinding true
+    }
+
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+}
+
+dependencies {
+//    implementation project(Modules.facebook)
+//    implementation project(Modules.google)
+//    implementation project(Modules.youtube)
+//    implementation project(Modules.image_compressor)
+    implementation project(Modules.permission_manager)
+    implementation Deps.stdlib
+    implementation Deps.core_ktx
+    implementation Deps.appcompat
+    implementation Deps.material
+    implementation Deps.constraintlayout
+    testImplementation Deps.junit
+    androidTestImplementation Deps.junit_test
+    androidTestImplementation Deps.espresso_core
+    implementation Deps.gson
+    implementation Deps.rx_android
+    implementation Deps.rx_java
+    implementation Deps.kotlinx_coroutines_android
+    implementation Deps.moshi
+    implementation Deps.okhttp
+    implementation Deps.logging_interceptor
+    implementation Deps.retrofit
+    implementation Deps.converter_moshi
+    implementation Deps.converter_gson
+    implementation Deps.glide
+    annotationProcessor Deps.glide_compiler
+    implementation Deps.kodein_di_framework_androidx
+    implementation Deps.kodein_di_generic_jvm
+    implementation Deps.recyclerview
+    implementation Deps.recyclerview_selection
+    implementation Deps.swiperefreshlayout
+    implementation Deps.lifecycle_viewmodel_ktx
+    implementation Deps.lifecycle_runtime_ktx
+    implementation Deps.lifecycle_livedata_ktx
+    implementation Deps.circle_imageview
+
+    //firebase
+    implementation platform(Deps.firebase_bom)
+    implementation Deps.firebase_analytics_ktx
+    implementation Deps.firebase_messaging_ktx
+    implementation Deps.firebase_auth
+
+    implementation Deps.send_bird
+    implementation 'com.github.pwittchen:reactivenetwork-rx2:3.0.8'
+    implementation 'com.thanosfisherman.wifiutils:wifiutils:1.6.5'
+    implementation('com.journeyapps:zxing-android-embedded:4.2.0') { transitive = false }
+    implementation 'androidx.appcompat:appcompat:1.0.2'
+    implementation 'com.google.zxing:core:3.4.1'
+    implementation 'com.airbnb.android:lottie:4.1.0'
+}

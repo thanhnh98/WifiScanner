@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="TextViewStyle" parent="Widget.AppCompat.TextView">
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:textColor">#333333</item>
+    </style>
+
+    <style name="TextInputStyle">
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:textColor">#333333</item>
+        <item name="android:textColorHint">@color/md_grey_700</item>
+        <item name="android:backgroundTint">@color/md_grey_500</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+</resources>
